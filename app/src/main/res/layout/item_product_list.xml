@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="20dp">
+
+    <ImageView
+        android:id="@+id/image_product"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/image_example"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rectangle_40"
+        android:fontFamily="@font/notosansmonocjkkr_bold"
+        android:gravity="center"
+        android:text="중고"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/image_product"
+        app:layout_constraintTop_toTopOf="@id/image_product" />
+
+    <TextView
+        android:id="@+id/tv_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rectangle_47"
+        android:fontFamily="@font/notosansmonocjkkr_bold"
+        android:gravity="center"
+        android:text="택배"
+        android:textColor="@color/text_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/tv_status"
+        app:layout_constraintTop_toTopOf="@id/image_product" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/notosansmonocjkkr_regular"
+        android:text="바비브라운 립스틱"
+        android:textColor="@color/text_black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/image_product"
+        app:layout_constraintStart_toStartOf="@id/tv_status"
+        app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/notosansmonocjkkr_regular"
+        android:text="성동구 행당제 2동"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_status"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_name" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="11,000원"
+        android:textColor="@color/text_black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_product"
+        app:layout_constraintStart_toStartOf="@id/tv_status" />
+</androidx.constraintlayout.widget.ConstraintLayout>
