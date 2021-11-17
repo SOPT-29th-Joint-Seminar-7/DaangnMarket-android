@@ -10,4 +10,6 @@
 
     <color name="orange">#FE7E35</color>
     <color name="text_black">#1a1a1a</color>
+    <color name="text_gray">#979797</color>
+    <color name="line_gray">#F3F3F3</color>
 </resources>
