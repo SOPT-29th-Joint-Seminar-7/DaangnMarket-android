@@ -8,4 +8,20 @@
     <string name="my_page">나의 당근</string>
     <string name="used_goods_write">중고거래 글쓰기</string>
     <string name="complete">완료</string>
+    <string name="title">제목</string>
+    <string name="category">카테고리</string>
+    <string name="price">₩ 가격 (선택사항)</string>
+    <string name="price_suggestion">가격제안 받기</string>
+    <string name="product_status">상품 상태</string>
+    <string name="used">중고</string>
+    <string name="none_open">미개봉</string>
+    <string name="status_good">상태 양호</string>
+    <string name="status_bad">하자 약간</string>
+    <string name="transaction">거래 방식</string>
+    <string name="duplicate">(중복 선택 가능)</string>
+    <string name="face_to_face">대면</string>
+    <string name="delivery">배달</string>
+    <string name="neighbor">보여줄 동네 설정</string>
+    <string name="frequent">자주 쓰는 문구</string>
+    <string name="content_hint">게시글 내용을 작성해주세요. (가품 및 판매금지품목은 게시가 제한될 수 있어요.)</string>
 </resources>

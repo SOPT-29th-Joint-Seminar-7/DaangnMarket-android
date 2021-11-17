@@ -57,12 +57,418 @@
         app:layout_constraintTop_toBottomOf="@id/layout_title"
         app:layout_constraintBottom_toTopOf="@id/layout_bottom">
 
+        <ImageView
+            android:id="@+id/iv_rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangle_28" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_rectangle" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_rectangle"
+            app:layout_constraintStart_toStartOf="@+id/iv_rectangle"
+            app:layout_constraintTop_toTopOf="@+id/iv_rectangle"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/10"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/count_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_rectangle"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="16dp"
+            android:letterSpacing="0.02"
+            android:background="@null"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:ems="15"
+            android:textColor="@color/text_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            android:hint="@string/title"
+            android:autofillHints="no"
+            android:inputType="textPersonName" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_title" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="21dp"
+            android:text="@string/category"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:letterSpacing="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="29dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2"
+            app:srcCompat="@drawable/ic_more_down_arrow" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_category" />
+
+        <EditText
+            android:id="@+id/et_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:letterSpacing="0.02"
+            android:background="@null"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:ems="8"
+            android:textColor="@color/text_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line3"
+            android:hint="@string/price"
+            android:autofillHints="no"
+            android:inputType="textPersonName" />
+
+        <View
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_price" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="22dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_price_suggestion"
+            app:layout_constraintTop_toBottomOf="@+id/line3"
+            app:srcCompat="@drawable/ic_check_marks" />
+
+        <TextView
+            android:id="@+id/tv_price_suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_suggestion"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textColor="@color/write_gray"
+            android:letterSpacing="0.02"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+        <TextView
+            android:id="@+id/tv_product_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/product_status"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:letterSpacing="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="16dp"
+            app:singleSelection="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_status">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_used"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:text="@string/used"
+                android:backgroundTint="@color/orange"
+                android:textColor="@color/white"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_none_open"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="12dp"
+                app:textEndPadding="12dp"
+                android:text="@string/none_open"
+                android:backgroundTint="@color/write_gray"
+                android:textColor="@color/text_gray"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_good"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="10dp"
+                app:textEndPadding="10dp"
+                android:text="@string/status_good"
+                android:backgroundTint="@color/write_gray"
+                android:textColor="@color/text_gray"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_bad"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="10dp"
+                app:textEndPadding="10dp"
+                android:text="@string/status_bad"
+                android:backgroundTint="@color/write_gray"
+                android:textColor="@color/text_gray"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <View
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_status" />
+
+        <TextView
+            android:id="@+id/tv_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/transaction"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="15sp"
+            android:textColor="@color/text_black"
+            android:letterSpacing="0.02"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line5" />
+
+        <TextView
+            android:id="@+id/tv_duplicate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/write_gray"
+            android:text="@string/duplicate"
+            app:layout_constraintStart_toEndOf="@+id/tv_transaction"
+            app:layout_constraintTop_toBottomOf="@+id/line5" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginBottom="16dp"
+            app:singleSelection="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_transaction">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_pace"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:text="@string/face_to_face"
+                android:backgroundTint="@color/orange"
+                android:textColor="@color/white"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_delivery"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:textStartPadding="15dp"
+                app:textEndPadding="15dp"
+                android:text="@string/delivery"
+                android:backgroundTint="@color/write_gray"
+                android:textColor="@color/text_gray"
+                android:fontFamily="@font/notosansmonocjkkr_bold"
+                android:textStyle="normal"
+                android:textSize="12sp" />
+        </com.google.android.material.chip.ChipGroup>
+        <View
+            android:id="@+id/line6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/line_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_transaction" />
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="top"
+            android:layout_marginHorizontal="17dp"
+            android:layout_marginVertical="10dp"
+            android:autofillHints="no"
+            android:background="@null"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:scrollHorizontally="false"
+            android:hint="@string/content_hint"
+            android:inputType="textMultiLine"
+            android:letterSpacing="0.02"
+            android:textColor="@color/text_black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <ImageView
+            android:id="@+id/iv_frequent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_frequently_used_phrases" />
+
+        <TextView
+            android:id="@+id/tv_frequent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frequent"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/text_black"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_frequent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_neighbor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_frequent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_neighbor" />
+
+        <TextView
+            android:id="@+id/tv_neighbor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/neighbor"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:textStyle="normal"
+            android:textSize="12sp"
+            android:textColor="@color/text_black"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_neighbor"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
