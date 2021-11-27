@@ -65,4 +65,7 @@ dependencies {
 
     // chip
     implementation 'com.google.android.material:material:1.0.0'
+
+    //dataBinding
+    kapt 'com.android.databinding:compiler:7.0.2'
 }
