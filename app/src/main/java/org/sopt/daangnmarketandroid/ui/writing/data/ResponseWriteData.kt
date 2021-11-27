@@ -1,4 +1,4 @@
-package org.sopt.daangnmarketandroid.data
+package org.sopt.daangnmarketandroid.ui.writing.data
 
 data class ResponseWriteData(
     val status: Int,

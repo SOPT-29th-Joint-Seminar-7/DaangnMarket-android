@@ -1,4 +1,4 @@
-package org.sopt.daangnmarketandroid.data
+package org.sopt.daangnmarketandroid.ui.writing.data
 
 data class RequestWriteData(
     val title: String, // "미즈노 축구화 260 판매합니다."

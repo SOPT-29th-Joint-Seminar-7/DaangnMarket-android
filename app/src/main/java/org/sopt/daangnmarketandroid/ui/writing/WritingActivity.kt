@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import org.sopt.daangnmarketandroid.R
+import org.sopt.daangnmarketandroid.api.ServiceCreator
 import org.sopt.daangnmarketandroid.databinding.ActivityWritingBinding
+import org.sopt.daangnmarketandroid.util.enqueueUtil
+import org.sopt.daangnmarketandroid.ui.writing.data.RequestWriteData
 
 class WritingActivity: AppCompatActivity() {
     private lateinit var  binding: ActivityWritingBinding
@@ -36,7 +39,54 @@ class WritingActivity: AppCompatActivity() {
     }
 
     private fun completePost(){
-        
+        val title = binding.etTitle.text.toString()
+        val category = "스포츠/레저"
+        val price = binding.etPrice.text.toString().toInt()
+
+        val state = when {
+            binding.chUsed.isChecked -> {
+                "중고"
+            }
+            binding.chNoneOpen.isChecked -> {
+                "미개봉"
+            }
+            binding.chGood.isChecked -> {
+                "상태양호"
+            }
+            binding.chBad.isChecked -> {
+                "하자약간"
+            }
+            else -> {
+                "중고"
+            }
+        }
+
+        val trade = when {
+            binding.chPace.isChecked -> {
+                "대면"
+            }
+            else -> {
+                "배달"
+            }
+        }
+        val content = binding.etContent.text.toString()
+
+        val requestWriteData = RequestWriteData(
+            title = title,
+            category = category,
+            price = price,
+            state = state,
+            trade = trade,
+            content = content
+        )
+
+        val call = ServiceCreator.apiService.postUpload(requestWriteData)
+
+        call.enqueueUtil(
+            onSuccess = {
+                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+            }
+        )
     }
 
     private fun priceCheck(){
