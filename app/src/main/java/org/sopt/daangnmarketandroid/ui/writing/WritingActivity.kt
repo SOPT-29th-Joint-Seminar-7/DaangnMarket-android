@@ -31,8 +31,12 @@ class WritingActivity: AppCompatActivity() {
     private fun terminate(){
         with(binding){
             ivBack.setOnClickListener { finish() }
-            tvComplete.setOnClickListener { finish() }
+            tvComplete.setOnClickListener { completePost() }
         }
+    }
+
+    private fun completePost(){
+        
     }
 
     private fun priceCheck(){
