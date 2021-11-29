@@ -13,6 +13,7 @@ import com.bumptech.glide.request.RequestOptions
 import org.sopt.daangnmarketandroid.R
 import org.sopt.daangnmarketandroid.api.ServiceCreator
 import org.sopt.daangnmarketandroid.databinding.ActivityWritingBinding
+import org.sopt.daangnmarketandroid.ui.home.HomeActivity
 import org.sopt.daangnmarketandroid.util.enqueueUtil
 import org.sopt.daangnmarketandroid.ui.writing.data.RequestWriteData
 
@@ -45,28 +46,28 @@ class WritingActivity: AppCompatActivity() {
 
         val state = when {
             binding.chUsed.isChecked -> {
-                "중고"
+                STATE_USED
             }
             binding.chNoneOpen.isChecked -> {
-                "미개봉"
+                STATE_NONEOPEN
             }
             binding.chGood.isChecked -> {
-                "상태양호"
+                STATE_GOOD
             }
             binding.chBad.isChecked -> {
-                "하자약간"
+                STATE_BAD
             }
             else -> {
-                "중고"
+                STATE_USED
             }
         }
 
         val trade = when {
             binding.chPace.isChecked -> {
-                "대면"
+                TRADE_PACE
             }
             else -> {
-                "배달"
+                TRADE_DELIVERY
             }
         }
         val content = binding.etContent.text.toString()
@@ -85,6 +86,8 @@ class WritingActivity: AppCompatActivity() {
         call.enqueueUtil(
             onSuccess = {
                 Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
             }
         )
     }
@@ -129,8 +132,17 @@ class WritingActivity: AppCompatActivity() {
                 }
             }
         }
+
     companion object{
         const val PRICE_SUGGESTION = 1
         const val PRICE_NOT_SUGGESTION = 2
+
+        const val STATE_USED = "중고"
+        const val STATE_NONEOPEN = "미개봉"
+        const val STATE_GOOD = "상태양호"
+        const val STATE_BAD = "하자약간"
+
+        const val TRADE_PACE = "대면"
+        const val TRADE_DELIVERY = "배달"
     }
 }
