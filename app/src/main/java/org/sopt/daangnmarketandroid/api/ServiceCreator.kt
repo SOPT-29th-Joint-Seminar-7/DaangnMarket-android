@@ -6,7 +6,7 @@ import retrofit2.create
 
 object ServiceCreator {
     private const val BASE_URL =
-        "https://asia-northeast3-daangnmarket-wesopt.cloudfunctions.net/api/"
+        "https://asia-northeast3-daangnmarket-wesopt.cloudfunctions.net/api"
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)

@@ -11,7 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import org.sopt.daangnmarketandroid.R
+import org.sopt.daangnmarketandroid.api.ServiceCreator
 import org.sopt.daangnmarketandroid.databinding.ActivityWritingBinding
+import org.sopt.daangnmarketandroid.ui.home.HomeActivity
+import org.sopt.daangnmarketandroid.util.enqueueUtil
+import org.sopt.daangnmarketandroid.ui.writing.data.RequestWriteData
 
 class WritingActivity: AppCompatActivity() {
     private lateinit var  binding: ActivityWritingBinding
@@ -31,8 +35,61 @@ class WritingActivity: AppCompatActivity() {
     private fun terminate(){
         with(binding){
             ivBack.setOnClickListener { finish() }
-            tvComplete.setOnClickListener { finish() }
+            tvComplete.setOnClickListener { completePost() }
         }
+    }
+
+    private fun completePost(){
+        val title = binding.etTitle.text.toString()
+        val category = "스포츠/레저"
+        val price = binding.etPrice.text.toString().toInt()
+
+        val state = when {
+            binding.chUsed.isChecked -> {
+                STATE_USED
+            }
+            binding.chNoneOpen.isChecked -> {
+                STATE_NONEOPEN
+            }
+            binding.chGood.isChecked -> {
+                STATE_GOOD
+            }
+            binding.chBad.isChecked -> {
+                STATE_BAD
+            }
+            else -> {
+                STATE_USED
+            }
+        }
+
+        val trade = when {
+            binding.chPace.isChecked -> {
+                TRADE_PACE
+            }
+            else -> {
+                TRADE_DELIVERY
+            }
+        }
+        val content = binding.etContent.text.toString()
+
+        val requestWriteData = RequestWriteData(
+            title = title,
+            category = category,
+            price = price,
+            state = state,
+            trade = trade,
+            content = content
+        )
+
+        val call = ServiceCreator.apiService.postUpload(requestWriteData)
+
+        call.enqueueUtil(
+            onSuccess = {
+                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        )
     }
 
     private fun priceCheck(){
@@ -75,8 +132,17 @@ class WritingActivity: AppCompatActivity() {
                 }
             }
         }
+
     companion object{
         const val PRICE_SUGGESTION = 1
         const val PRICE_NOT_SUGGESTION = 2
+
+        const val STATE_USED = "중고"
+        const val STATE_NONEOPEN = "미개봉"
+        const val STATE_GOOD = "상태양호"
+        const val STATE_BAD = "하자약간"
+
+        const val TRADE_PACE = "대면"
+        const val TRADE_DELIVERY = "배달"
     }
 }
